@@ -14,9 +14,17 @@ First, I changed the default rails server (WebRick) to Puma. Add the Puma gem to
 
 Then I created a new route for my board controller and called my new controller method "Events". Clients can then connect to /api/board/:id/events through EventSource and listen to changes in the board.
 
-{% highlight ruby %} def events @board = current_user.boards.find(params[:id]) response.headers['Content-Type'] = 'text/event-stream' sse = SSE.new(response.stream, event: "changed")
-
-@board.on_board_change do |change| change = JSON.parse change sse.write({change: change}) end {% endhighlight %}
+{% highlight ruby %}
+def events
+  @board = current_user.boards.find(params[:id])
+  response.headers['Content-Type'] = 'text/event-stream'
+  sse = SSE.new(response.stream, event: "changed")
+  @board.on_board_change do |change|
+    change = JSON.parse(change)
+    sse.write({change: change})
+  end
+end
+{% endhighlight %}
 
 As you can see, we're waiting for on_board_change to return a change. This would usually be a blocking operation but since we're using Puma we will be able to serve other requests concurrently. Lets check out the on_board_change method which is in the Board model
 
