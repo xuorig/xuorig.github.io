@@ -1,4 +1,4 @@
-name: XuoriG's Blog
+name: Marc-Andre Giroux's Blog
 description: Tails about code, music, and stuffs
 meta_description: "Marc-André Giroux's Blog"
 
@@ -11,8 +11,8 @@ paginate: 20
 baseurl: /
 domain_name: 'http://mgiroux.me'
 google_analytics: 'UA-XXXXXXXX-X'
-disqus: false
-disqus_shortname: 'your-disqus-shortname'
+disqus: true
+disqus_shortname: 'marcandregirouxblog'
 
 # Details for the RSS feed generator
 url:            'http://mgiroux.me'
