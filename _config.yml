@@ -22,6 +22,9 @@ authorGoogle: 'https://plus.google.com/103412889445491341044'
 
 permalink:       /:year/:title/
 
+gems:
+  - jekyll-sitemap
+
 defaults:
     -
         scope:
