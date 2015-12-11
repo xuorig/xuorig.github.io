@@ -4,7 +4,7 @@ permalink: about/
 profile: true
 ---
 
-Hello, I'm __Marc-André__
+Hello, I'm __Marc-André Giroux__
 
 I'm a computer science student living in Montreal, QC.
 
