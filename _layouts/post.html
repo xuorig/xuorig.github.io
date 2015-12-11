@@ -5,8 +5,8 @@ archive: true
 
 <article class="post">
     <header>
-        <h1>{{ page.title }}</h1>
-        <h2 class="headline">{{ page.date | date:"%B %-d, %Y" }}</h2>
+        <h1 itemprop="name">{{ page.title }}</h1>
+        <h2 itemprop="datePublished" content="2015-11-11" class="headline">{{ page.date | date:"%B %-d, %Y" }}</h2>
     </header>
     <section id="post-body">
         {{content}}
@@ -16,7 +16,12 @@ archive: true
     <a href="http://twitter.com/{{ site.authorTwitter }}">
         <img class="avatar" src="{{ site.baseurl }}assets/images/avatar.png">
         <div>
-            <span class="dark"><a href="https://plus.google.com/103412889445491341044?rel=author">{{site.author}}</a></span>
+            <span class="dark">
+              <a href="https://plus.google.com/103412889445491341044?rel=author">
+                <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <span itemprop="name">{{site.author}}</span></span>
+              </a>
+            </span>
             <span>{{ site.description }}</span>
         </div>
     </a>

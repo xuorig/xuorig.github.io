@@ -23,7 +23,7 @@
       {% include profile.html %}
   {% endif %}
 
-  <section id="wrapper" class="{% if page.profile %}home{% endif %}">
+  <section id="wrapper" itemscope itemtype="http://schema.org/Article" class="{% if page.profile %}home{% endif %}">
     {{ content }}
   </section>
 
