@@ -24,6 +24,7 @@ permalink:       /:year/:title/
 
 gems:
   - jekyll-sitemap
+  - jekyll-paginate
 
 defaults:
     -

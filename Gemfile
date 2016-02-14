@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
-gem 'jekyll', '2.5.3'
+gem 'jekyll'
 gem 'jekyll-sitemap'
-gem 'rouge', '1.9'
+gem 'rouge'
+gem 'jekyll-paginate'

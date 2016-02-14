@@ -1,10 +1,8 @@
 ---
 title:  "My journey into GraphQL-Ruby's query execution"
-date:   2016-02-14 17:00:00
+date:   2016-02-14 11:00:00
 description: Overview of how GraphQL-Ruby resolves GraphQL queries using it's Executor
 ---
-
-## Query execution in Graphql-Ruby
 
 `schema.execute()` is the public method we all use to execute graphql queries on our graphql-ruby powered Apis currently. But what actually happens when we call that method ? A cool thing `graphql-ruby` allows us to do is create our own query executors to use with the gem. I went on a journey into the default executor used by `graphql-ruby` and here are my finding:
 
@@ -37,9 +35,11 @@ For now, the `execution_strategy` for all operation types is always `SerialExecu
 
 SerialExecution is pretty much a wrapper for the three main classes we will need to resolve our query:
 
-  - `GraphQL::Query::BaseExecution::FieldResolution`
-  - `GraphQL::Query::BaseExecution::OperationResolution`
-  - `GraphQL::Query::BaseExecution::SelectionResolution`
+{% highlight javascript %}
+  GraphQL::Query::BaseExecution::FieldResolution
+  GraphQL::Query::BaseExecution::OperationResolution
+  GraphQL::Query::BaseExecution::SelectionResolution
+{% endhighlight %}
 
 
 From the spec:
@@ -69,16 +69,14 @@ query starwars {
     name
   }
 }
-{% endhighlight %}
 
+{% endhighlight %}
 The top level selections on this query would look something like this
 
-  - alias:heroNewHope, name=hero, selections=
-    - id
-    - name
-  - alias:heroJedi, name=hero, selections =
-    - id
-    - name
+{% highlight javascript %}
+alias:heroNewHope, name=hero, selections=[id, name]
+alias:heroJedi, name=hero, selections =[id, name]
+{% endhighlight %}
 
 Ok. This is where more things happen, in the `SelectionResolution`, we first flatten all the selection, and merge all fields to avoid resolving the same thing more than once, that means that if we have something like this:
 
@@ -152,10 +150,15 @@ When resolving a List type, we simply get the underlying type of the items, and 
 
 If we get a Scalar or an Enum, we know we're at a the end of a patg and that we can get a value. `coerce_result` is called on the field to get the value. `coerce_result` is simply a proc used to manipulate the final result value.
 
-The proc could look like something like this for example: `coerce_result -> (value) { value.to_f }`
+The proc could look like something like this for example:
+
+{% highlight javascript %}
+coerce_result -> (value) { value.to_f }
+{% endhighlight %}
 
 #### NonNull
 
 For a `NonNull` type, kind of like with a `List` type, we get the underlying type and resolve it with the proper strategy.
 
 When all selections on the top level operation are resolved, we finally return the Hash containing the entire query resolved.
+
