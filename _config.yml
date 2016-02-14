@@ -5,7 +5,7 @@ meta_description: "Marc-Andre Giroux personal blog about rails, react, relay and
 aboutPage: true
 
 markdown: redcarpet
-highlighter: pygments
+highlighter: rouge
 
 paginate: 20
 baseurl: /
