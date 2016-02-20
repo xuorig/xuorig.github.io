@@ -162,3 +162,8 @@ For a `NonNull` type, kind of like with a `List` type, we get the underlying typ
 
 When all selections on the top level operation are resolved, we finally return the Hash containing the entire query resolved.
 
+You can find me on Twitter [@\_\_xuorig\_\_][twit] or [Github][xuo]
+
+[xuo]: http://github.com/xuorig
+[twit]: https://twitter.com/__xuorig__
+[app]: https://github.com/xuorig/my-simple-blogging-app

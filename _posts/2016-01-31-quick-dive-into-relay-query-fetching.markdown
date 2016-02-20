@@ -143,4 +143,9 @@ else
 
 I find that how Relay handles diffs and substracts what is already being sent to the server really impressive and cool. Next step is to really dive into how the data is hashed / written to the store, which [Huey's post][huey] explores!
 
+You can find me on Twitter [@\_\_xuorig\_\_][twit] or [Github][xuo]
+
+[twit]: https://twitter.com/__xuorig__
+[xuo]: http://github.com/xuorig
+[app]: https://github.com/xuorig/my-simple-blogging-app
 [huey]: http://hueypetersen.com/posts/2015/09/30/quick-look-at-the-relay-store/

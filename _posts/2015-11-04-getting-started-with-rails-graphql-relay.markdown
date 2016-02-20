@@ -4,7 +4,7 @@ date:   2015-11-11 11:00:00
 description: How to get started with Facebook's Relay Framework using a Rails GraphQL API
 ---
 
-For the past few weeks I've been playing with Facebook's [GraphQL][graphql] and [Relay][relay] for a personnal project of mine. I thought I would give a quick overview of how to set up a Relay App using Rails as the API.
+For the past few weeks I've been playing with Facebook's [GraphQL][graphql] and [Relay][relay] for a personal project of mine. I thought I would give a quick overview of how to set up a Relay App using Rails as the API.
 
 # What is [GraphQL][graphql] ?
 Simply put, GraphQL is an application layer query language from Facebook. You can describe your API using a schema (a graph). All your clients can then query your data through the schema. GraphQL tries to solve one of the biggest problems we have with REST APIs these days: Changing data requirements in the clients.
@@ -185,9 +185,10 @@ Make sure you add this line to your `application.rb` for rails to autoload the t
 config.autoload_paths << Rails.root.join('app', 'graph', 'types')
 {% endhighlight %}
 
-As a first type, let's create the `Query` type. GraphQL always needs a query root for a schema. Create`QueryType.rb` in `app/graph/types` and add the following code in it.
+As a first type, let's create the `Query` type. GraphQL always needs a query root for a schema. Create `query_type.rb` in `app/graph/types` and add the following code in it.
 
 {% highlight ruby %}
+# app/graph/types/query_type.rb
 QueryType = GraphQL::ObjectType.define do
   name "Query"
   description "The query root for this schema"
@@ -293,7 +294,18 @@ You can take a look at the [source here][src].
 
 #### If you have more questions about GraphQL, come hang out in Slack! [https://graphql-slack.herokuapp.com/][slack]
 
+#### Edit:
+As Sergio del Rio pointed out in comments, you'll want to change `protect_from_forgery` to `null_session`
+in your `ApplicationController` for your api to work correctly at first. Also make sure you name your files the same as your class name for Rails to load them correctly. `QueryType` -> `query_type.rb`
 
+#### Edit2:
+Instead of using curl to test your queries, you can use GraphiQL, an amazing tool to test and even autocomplete your GraphQL queries. [Here's how to install it in your Rails App.][install]
+
+You can find me on Twitter [@\_\_xuorig\_\_][twit] or [Github][xuo]
+
+[twit]: https://twitter.com/__xuorig__
+[xuo]: http://github.com/xuorig
+[app]: https://github.com/xuorig/my-simple-blogging-app
 [graphql]: http://facebook.github.io/graphql/
 [relay]: https://github.com/facebook/relay
 [graphruby]: https://github.com/rmosolgo/graphql-ruby
@@ -303,6 +315,7 @@ You can take a look at the [source here][src].
 [containers]: https://facebook.github.io/relay/docs/guides-containers.html
 [rootcontainer]: https://facebook.github.io/relay/docs/guides-root-container.html#content
 [relaydocs]: https://github.com/facebook/relay
+[install]: http://mgiroux.me/2016/setting-up-graphiql-with-rails/
 [rackcors]: https://github.com/cyu/rack-cors
 [slack]: https://graphql-slack.herokuapp.com/
 [src]: https://github.com/xuorig/my-simple-blogging-app

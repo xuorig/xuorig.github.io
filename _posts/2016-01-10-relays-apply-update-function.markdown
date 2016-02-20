@@ -94,5 +94,9 @@ module.exports = Relay.createContainer(Story, {
 I have seen a lot of questions on using Relay that could be solved using apply_update really easily.
 Also keep in mind that `update` is now deprecated and you should use `RelayStore#commitUpdate` to get the same behavior!
 
+You can find me on Twitter [@\_\_xuorig\_\_][twit] or [Github][xuo]
 
+[twit]: https://twitter.com/__xuorig__
+[xuo]: http://github.com/xuorig
+[app]: https://github.com/xuorig/my-simple-blogging-app
 [docs]: https://facebook.github.io/relay/docs/api-reference-relay-container.html#getpendingtransactions

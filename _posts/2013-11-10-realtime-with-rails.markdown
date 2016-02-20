@@ -112,6 +112,11 @@ The amount of time to sleep between heartbeats is kind of a tradeoff. The longer
 
 Hope this will help some of you. Sever Side Events are pretty cool but I am wondering if I should try the same with WebSockets until they fix the issue I linked above!
 
+You can find me on Twitter [@\_\_xuorig\_\_][twit] or [Github][xuo]
+
+[twit]: https://twitter.com/__xuorig__
+[xuo]: http://github.com/xuorig
+[app]: https://github.com/xuorig/my-simple-blogging-app
 [teamboard]: http://teamboardapp.com
 [sse]:       http://api.rubyonrails.org/classes/ActionController/Live/SSE.html
 [isitlive]:  http://tenderlovemaking.com/2012/07/30/is-it-live.html

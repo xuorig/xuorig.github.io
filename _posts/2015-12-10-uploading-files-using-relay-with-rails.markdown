@@ -114,8 +114,11 @@ the server* and you might want to upload it browser side!
 
 Hope it'll help some of you!
 
+You can find me on Twitter [@\_\_xuorig\_\_][twit] or [Github][xuo]
 
-
+[twit]: https://twitter.com/__xuorig__
+[xuo]: http://github.com/xuorig
+[app]: https://github.com/xuorig/my-simple-blogging-app
 [relay]: https://github.com/facebook/relay
 [graphql]: https://github.com/graphql
 [mosolgo]: https://twitter.com/rmosolgo
