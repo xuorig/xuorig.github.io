@@ -36,7 +36,7 @@ Now everytime Relay fetches data, our token will be sent as a header so we can a
 
 ### Handling the token server side
 
-#### Generating the token
+#### Authorization Token
 
 If we want to use an `auth_token` to identify our users, we'll need that in our database. Let's create a migration to add the column:
 
