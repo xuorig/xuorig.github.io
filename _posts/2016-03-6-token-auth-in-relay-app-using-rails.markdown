@@ -1,14 +1,14 @@
 ---
 title:  "Authentication in Relay Applications using Rails and GraphQL"
 date:   2016-03-06 10:00:00
-description: Using an Authorization Token to enable authentification in Relay applications using Rails with Devise and GraphQL
+description: Using an Authorization Token to enable authentication in Relay applications using Rails with Devise and GraphQL
 ---
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@__xuorig__">
 <meta name="twitter:creator" content="@__xuorig__">
 <meta name="twitter:title" content="Authentication in Relay Applications using Rails and GraphQL">
-<meta name="twitter:description" content="Using an Authorization Token to enable authentification in Relay applications using Rails with Devise and GraphQL">
+<meta name="twitter:description" content="Using an Authorization Token to enable authentication in Relay applications using Rails with Devise and GraphQL">
 <meta name="twitter:image" content="https://cloud.githubusercontent.com/assets/2231765/9094460/cb43861e-3b66-11e5-9fbf-71066ff3ab13.png">
 
 Most of apps today have users and require some form of Auth. It can be tricky to implement it in a Relay app because we don't have explicit control on what we send to the server.
