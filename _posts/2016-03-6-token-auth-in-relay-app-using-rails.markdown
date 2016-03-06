@@ -15,7 +15,7 @@ Most of apps today have users and require some form of Auth. It can be tricky to
 
 Here's the way I've been doing it in my project, this solution assumes that you're using [Devise][devise] for authentication in your Rails app.
 
-### Sending the token client side
+### Authorization Token
 
 The way I've implemented Authentication in my Relay app is by using an Authorization Token in the request headers.
 
