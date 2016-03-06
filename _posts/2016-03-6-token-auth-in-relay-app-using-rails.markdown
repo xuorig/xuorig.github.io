@@ -23,7 +23,7 @@ First thing we're going to do is modify the `DefaultNetworkLayer` to always send
 
 {% highlight javascript %}
 const token = localStorage.getItem('auth_token');
-const headers = { Authorization: auth_token }
+const headers = { Authorization: token }
 
 Relay.injectNetworkLayer(
   new Relay.DefaultNetworkLayer('http://localhost:3000/your_graphql_endpoint', {
