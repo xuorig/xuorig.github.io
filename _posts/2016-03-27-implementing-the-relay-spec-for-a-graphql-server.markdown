@@ -18,7 +18,7 @@ I've seen some confusion on Relay and GraphQL lately. GraphQL is so often used w
 
 From Facebook's words Relay is simply a 
 
-> Framework for building data-driver React applications.
+> Framework for building data-driven React applications.
 
 It is a wrapper around Relay components, enabling them to live next to the GraphQL queries they need to fulfil their data requirements.
 On the client side, Relay's strength is it's amazing client side cache. On the server side, Relay expects the GraphQL server to implement a certain spec for things to work perfectly.
