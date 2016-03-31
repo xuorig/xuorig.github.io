@@ -164,7 +164,7 @@ rails generate model Author name:string
 Our blog has one author so lets add that association to the model:
 {% highlight ruby %}
 class Blog < ActiveRecord::Base
-  has_one :author
+  belongs_to :author
 end
 {% endhighlight %}
 
