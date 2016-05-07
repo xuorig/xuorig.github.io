@@ -49,6 +49,7 @@ code {
 /* Spacing */
 .post h1, h3, h4, h5, p, .post-body ul, #post-list li, pre {
 margin-bottom: 20px;
+margin-top: 20px;
 }
 
 /* Base */
