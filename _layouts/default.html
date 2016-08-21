@@ -19,7 +19,7 @@
 
   {% include navigation.html %}
 
-  {% if page.profile %}
+  {% if page.profile or page.speaking %}
       {% include profile.html %}
   {% endif %}
 
