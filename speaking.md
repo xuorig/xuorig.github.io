@@ -14,7 +14,7 @@ speaking: true
 
       <li>
           <a href="http://euruko2016.org/"><aside class="dates">Sept. 23-24 2016</aside></a>
-          <a href="http://euruko2016.org/">From REST to GraphQL <h2>EuRuKo - Sofia</h2></a>
+          <a href="http://euruko2016.org/">GraphQL on Rails <h2>EuRuKo - Sofia</h2></a>
       </li>
 
       <li>
