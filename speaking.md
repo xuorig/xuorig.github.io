@@ -12,12 +12,16 @@ speaking: true
           <a href="https://confoo.ca/en/yul2017/session/exploring-graphql">Exploring GraphQL<h2>ConFoo Montreal</h2></a>
       </li>
       <li>
+        <a href="https://2016.pycon.ca/en/schedule/087-marc-andre-giroux/"><aside class="dates">Nov 12-15 2016</aside></a>
+          <a href="https://2016.pycon.ca/en/schedule/087-marc-andre-giroux/">Becoming a REST Elitist<h2>Pycon Canada, Toronto</h2></a>
+      </li>
+      <li>
           <a href="http://graphqlsummit.com/"><aside class="dates">Oct. 26 2016</aside></a>
-          <a href="http://graphqlsummit.com/">GraphQL @ Shopify<h2>GraphQL Summit</h2></a>
+          <a href="http://graphqlsummit.com/">GraphQL @ Shopify<h2>GraphQL Summit, SF</h2></a>
       </li>
       <li>
           <a href="http://lanyrd.com/2016/fstoco/sfdpqb/"><aside class="dates">Oct. 17-18 2016</aside></a>
-          <a href="http://lanyrd.com/2016/fstoco/sfdpqb/">From REST to GraphQL <h2>Full Stack Fest Toronto</h2></a>
+          <a href="http://lanyrd.com/2016/fstoco/sfdpqb/">From REST to GraphQL <h2>Full Stack Toronto</h2></a>
       </li>
 </ul>
 
