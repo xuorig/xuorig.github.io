@@ -19,15 +19,15 @@ speaking: true
           <a href="http://graphqlsummit.com/"><aside class="dates">Oct. 26 2016</aside></a>
           <a href="http://graphqlsummit.com/">GraphQL @ Shopify<h2>GraphQL Summit, SF</h2></a>
       </li>
-      <li>
-          <a href="http://lanyrd.com/2016/fstoco/sfdpqb/"><aside class="dates">Oct. 17-18 2016</aside></a>
-          <a href="http://lanyrd.com/2016/fstoco/sfdpqb/">From REST to GraphQL <h2>Full Stack Toronto</h2></a>
-      </li>
 </ul>
 
 <h1> Past talks </h1>
 
 <ul class="talk-list" id="post-list">
+      <li>
+          <a href="http://lanyrd.com/2016/fstoco/sfdpqb/"><aside class="dates">Oct. 17-18 2016</aside></a>
+          <a href="http://lanyrd.com/2016/fstoco/sfdpqb/">From REST to GraphQL <h2>Full Stack Toronto</h2></a>
+      </li>
       <li>
           <a href="https://2016.fullstackfest.com/speakers/marc-andre-giroux/"><aside class="dates">Sept. 5th 2016</aside></a>
           <a href="https://2016.fullstackfest.com/speakers/marc-andre-giroux/">From REST to GraphQL <h2>Full Stack Fest - Barcelona</h2></a>

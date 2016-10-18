@@ -1,7 +1,7 @@
 ---
-title:  "Getting started with Rails, Graphql and Relay (Part 1) "
+title:  "Getting started with Rails and GraphQL"
 date:   2015-11-11 11:00:00
-description: How to get started with Facebook's Relay Framework using a Rails GraphQL API
+description: How to get started with a Rails GraphQL API
 ---
 
 For the past few weeks I've been playing with Facebook's [GraphQL][graphql] and [Relay][relay] for a personal project of mine. I thought I would give a quick overview of how to set up a Relay App using Rails as the API.
@@ -66,60 +66,7 @@ With GraphQL, we only add what we want to the query and it will fetch it, just l
 
 Check out the [Graphql Repo][graphqlrepo] for more information about GraphQL: How to query, mutate the schema and the type system.
 
-# Introduction to relay
-
-From Facebook's words, [Relay][relay] is a JavaScript framework for building data-driven [React][react] applications.
-
-If you aren't familiar with React, take a look at [this][https://facebook.github.io/react/] before continuing.
-
-### Containers
-
-Relay introduces [RelayContainers][containers]. They compose your plain React components with the GraphQL query fragments which will fetch data that is specific to a component. It looks like this:
-
-{% highlight javascript %}
-class BlogPost extends React.Component {
-  render() {
-    var blogPost = this.props.blogPost;
-    return (
-      <View>
-        <h1>{this.blogPost.title}</h1>
-        <p>{this.blogPost.content}</p>
-      </View>
-    );
-  }
-}
-
-// Export a Relay Container that wraps the original `BlogPost`, with the corresponding GraphQL fragment to describe the data requirements.
-module.exports = Relay.createContainer(BlogPost, {
-  fragments: {
-    blogPost: () => Relay.QL`
-      fragment on BlogPost {
-        title,
-        content
-      }
-    `,
-  }
-});
-{% endhighlight %}
-
-With this, each component now contains the data it needs with the UI and state.
-
-### Routes
-
-Routes can be a little confusing at first because of their name. They do not actually implement URL routing, instead they define an entry point into the Relay app. They define a GraphQL Root query that will be used to make the final query after putting together all the [fragments][frag] from the child components.
-
-
-### Root Container
-
-The [RootContainer][rootcontainer] basically puts the Routes and Containers together to construct the full GraphQL Query.
-
-There's much more to it but it's time to start building something now that you know a bit more about GraphQL and Relay!
-
-(For more detailed information about relay, please read the [docs][relaydocs]!)
-
-This blog will be split in 2 parts. This part will be about building the GraphQL API and the second part about building our Relay app.
-
-# Building the Rails GraphQL API
+# Building a Rails GraphQL API
 
 In this tutorial we're gonna build a simple Blogging app where you can fetch blogs and authors.
 
@@ -182,6 +129,7 @@ In that folder, create `app/graph/types`, where our custom graphql types will be
 Make sure you add this line to your `application.rb` for rails to autoload the types:
 
 {% highlight ruby %}
+config.autoload_paths << Rails.root.join('app', 'graph')
 config.autoload_paths << Rails.root.join('app', 'graph', 'types')
 {% endhighlight %}
 
@@ -244,9 +192,6 @@ The only thing left now is exposing that Schema through an end point. The best w
 
 {% highlight ruby %}
 class QueriesController < ApplicationController
-  def new
-  end
-
   def create
     query_string = params[:query]
     query_variables = params[:variables] || {}
