@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+ <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title data-react-helmet="true">Getting started with Rails and GraphQL</title><meta data-react-helmet="true" name="description" content="How to get started with a Rails GraphQL API"/><link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" rel="stylesheet"/><link rel="author" href="https://plus.google.com/103412889445491341044"/><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB10DGDrJaB7IauMg99tM97DUH9QC4rcO8"></script><style>.me{border-bottom:1px solid #eee;text-align:center;margin-bottom:40px}.me__profile{padding:10px}.me__profile__name{font-weight:700;color:#222;margin-top:10px;margin-bottom:0}.me__profile__desc{font-size:20px;font-weight:200;color:#aaa;margin-top:20px}.me__photo{animation:bounce 1s normal;margin-right:20px}.me__photo img{margin:0}.me__photo img:hover{animation:bounce 1s infinite}.me__photo__avatar{display:inline-block;width:110px;height:110px;border-radius:50%}.me__separator{width:60%;border-top:1px solid #eee}.me p a{font-weight:500}.me p{color:#aaa;font-weight:200;margin:0;padding:5px}.me p:last-child{margin-bottom:15px}@keyframes bounce{0%,20%,53%,80%,to{animation-timing-function:cubic-bezier(.215,.61,.355,1);transform:translateZ(0)}40%,43%{animation-timing-function:cubic-bezier(.755,.05,.855,.06);transform:translate3d(0,-30px,0)}70%{animation-timing-function:cubic-bezier(.755,.05,.855,.06);transform:translate3d(0,-15px,0)}90%{transform:translate3d(0,-4px,0)}}.markdown img{width:100%}.markdown p,li,ul{color:#666;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-size:18px;line-height:1.4em;margin-top:20px;margin-bottom:20px}.markdown pre{display:block;background:#3f3f3f;color:#dcdcdc;overflow-y:hidden;margin-top:30px;margin-bottom:30px}.markdown pre code{background:none;border:none;border-radius:3px;display:inline-block;overflow:inherit;padding:1.58333rem;white-space:inherit;word-wrap:normal}code{border-radius:3px;white-space:pre;white-space:pre-wrap;white-space:pre-line;white-space:-pre-wrap;white-space:-o-pre-wrap;white-space:-moz-pre-wrap;white-space:-hp-pre-wrap;word-wrap:break-word;background:#e5e5e5;border:1px solid #ccc;display:inline;font-family:Inconsolata,monospace,serif;max-width:100%;overflow:auto;padding:0 .1625rem}.clojure .hljs-attribute,.css .hljs-class,.css .hljs-id,.hljs-keyword,.hljs-request,.hljs-status,.hljs-tag,.lisp .hljs-title,.nginx .hljs-title{color:#e3ceab}.django .hljs-filter .hljs-argument,.django .hljs-template_tag,.django .hljs-variable{color:#dcdcdc}.hljs-date,.hljs-number{color:#8cd0d3}.apache .hljs-sqbracket,.dos .hljs-envvar,.dos .hljs-stream,.hljs-variable{color:#efdcbc}.diff .hljs-change,.dos .hljs-flow,.hljs-literal,.python .exception,.python .hljs-built_in,.tex .hljs-special{color:#efefaf}.diff .hljs-chunk,.hljs-subst{color:#8f8f8f}.apache .hljs-tag,.diff .hljs-header,.dos .hljs-keyword,.haskell .hljs-type,.hljs-prompt,.hljs-title,.nginx .hljs-built_in,.python .hljs-decorator,.ruby .hljs-class .hljs-parent,.tex .hljs-command{color:#efef8f}.dos .hljs-winutils,.ruby .hljs-string,.ruby .hljs-symbol,.ruby .hljs-symbol .hljs-string{color:#dca3a3}.apache .hljs-cbracket,.coffeescript .hljs-attribute,.css .hljs-rules .hljs-value,.diff .hljs-deletion,.hljs-attr_selector,.hljs-built_in,.hljs-javadoc,.hljs-pragma,.hljs-preprocessor,.hljs-pseudo,.hljs-string,.hljs-tag .hljs-value,.smalltalk .hljs-array,.smalltalk .hljs-class,.smalltalk .hljs-localvars,.sql .hljs-aggregate,.tex .hljs-formula{color:#cc9393}.diff .hljs-addition,.hljs-comment,.hljs-doctype,.hljs-pi,.hljs-shebang,.hljs-template_comment,.java .hljs-annotation{color:#7f9f7f}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .css,.xml .hljs-cdata,.xml .javascript,.xml .vbscript{opacity:.5}.post__title{text-align:center;font-weight:200;color:#222;margin-top:0}p.post__date{font-size:14px;text-transform:uppercase;color:#aaa;text-align:center;margin:0 auto;margin-bottom:40px}body{margin:0;border-top:8px solid #d64292;font-family:Raleway,sans-serif}.wrapper{padding:60px 40px 0;max-width:700px;margin:0 auto}.love{font-weight:200}.load-more,.love{padding-bottom:80px;padding-top:60px;color:#aaa;text-align:center;margin:0 auto}.load-more{font-size:16px;font-weight:500}.load-more button{font-size:16px;font-weight:700;color:#d64292;background:none;border:none;margin:0;padding:0;cursor:pointer}.load-more button:hover{text-decoration:underline}.purple,a{color:#d64292;text-decoration:none}hr{margin-top:40px;margin-bottom:40px;width:80%;border:1px solid #eee}.post-list{padding:10px}.post-list__item{text-decoration:none;display:block;padding-left:20px;border-left:4px solid #aaa;min-height:100px;margin-bottom:80px;transition:all .4s ease-out}.post-list__item-enter{opacity:.01}.post-list__item-enter-active{opacity:1}.post-list__item:last-child{margin-bottom:0}.post-list__item:hover{border-left:4px solid #d64292}.post-list__item__header{margin-top:26px;display:-ms-flexbox;display:flex}.post-list__item__header__title{-ms-flex:4;flex:4;font-size:20px;color:#222;margin-top:0;margin-bottom:8px}.post-list__item__header__date{-ms-flex:1;flex:1;color:#aaa;text-align:right}.post-list__item__desc{color:#aaa;font-size:18px;margin-top:0}.talk-list{max-width:600px;margin:0 auto}.talk-list__talk{border-radius:2px;margin-top:40px;display:-ms-flexbox;display:flex;box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);transition:all .3s cubic-bezier(.25,.8,.25,1)}.talk-list__talk:hover{box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22)}.talk-list__talk__map{-ms-flex:1;flex:1}.talk-list__talk__content{padding:20px;-ms-flex:3;flex:3}.talk-list__talk__content p{margin-top:0;margin-bottom:15px}.talk-list__talk__content__name{font-weight:200;font-size:24px}.talk-list__talk__content__name--cancelled{text-decoration:line-through}.cancelled{font-weight:200;font-size:24px;color:red;text-decoration:none}.talk-list__talk__content__event{font-weight:200;color:#222;font-size:18px}.light{color:#aaa}</style></head><body class="landing-page"><div id="react-mount"><div style="max-width:960px;margin-left:auto;margin-right:auto;" data-reactroot="" data-reactid="1" data-react-checksum="175633349"><div class="wrapper markdown" data-reactid="2"><!-- react-empty: 3 --><h1 class="post__title" data-reactid="4">Getting started with Rails and GraphQL</h1><p class="post__date" data-reactid="5">November 11, 2015</p><div data-reactid="6"><p>For the past few weeks I’ve been playing with Facebook’s <a href="http://facebook.github.io/GraphQL/">GraphQL</a> and <a href="https://github.com/facebook/relay">Relay</a> for a personal project of mine. I thought I would give a quick overview of how to set up a Relay App using Rails as the API.</p>
+<h1>What is <a href="http://facebook.github.io/GraphQL/">GraphQL</a> ?</h1>
+<p>Simply put, GraphQL is an application layer query language from Facebook. You can describe your API using a schema (a graph). All your clients can then query your data through the schema. GraphQL tries to solve one of the biggest problems we have with REST APIs these days: Changing data requirements in the clients.</p>
+<p>Here’s what a GraphQL Query would look like:</p>
+<pre><code class="language-javascript">{
+  user(id: <span class="hljs-number">1</span>) {
+    id,
+    name,
+    friends {
+      name
+    }
+  }
+}
+</code></pre>
+<p>The GraphQL response to this query would look like this:</p>
+<pre><code class="language-javascript">{
+  <span class="hljs-string">"user"</span> : {
+    <span class="hljs-string">"id"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">"name"</span>: <span class="hljs-string">"Marc-Andre Giroux"</span>,
+    <span class="hljs-string">"friends"</span>: [
+      {
+        <span class="hljs-string">"name"</span>: <span class="hljs-string">"Joe Bro"</span>
+      },
+      {
+        <span class="hljs-string">"name"</span>: <span class="hljs-string">"Johny Yolo"</span>
+      }
+    ]
+  }
+}
+</code></pre>
+<p>Now imagine we want to fetch the friends profile pictures, interests, and any other data. In we were using REST, we would either hit many other endpoints, or have to create a custom end point to fetch all that data at once.</p>
+<p>With GraphQL, we only add what we want to the query and it will fetch it, just like this:</p>
+<pre><code class="language-javascript">{
+  user(id: <span class="hljs-number">1</span>) {
+    id,
+    name,
+    friends {
+      name
+      interests {
+        name
+      }
+      profilePicture {
+        url,
+        width,
+        height
+      }
+    }
+  }
+}
+</code></pre>
+<p>Check out the <a href="https://github.com/facebook/GraphQL">Graphql Repo</a> for more information about GraphQL: How to query, mutate the schema and the type system.</p>
+<h1>Building a Rails GraphQL API</h1>
+<p>In this tutorial we’re gonna build a simple Blogging app where you can fetch blogs and authors.</p>
+<p>Lets start by building the API. Although it’s possible to have both the relay app and the API live in a single Rails app, I chose to implement it as 2 different parts. Since the requests will be coming from a different origin than the API, we need to setup CORS. Lets use <a href="https://github.com/cyu/rack-cors">rack-cors</a> to do that.</p>
+<p>First, add <code>rack-cors</code> to your <code>Gemfile</code>.</p>
+<pre><code class="language-ruby">  gem <span class="hljs-string">'rack-cors'</span>, <span class="hljs-symbol">:require</span> =&gt; <span class="hljs-string">'rack/cors'</span>
+</code></pre>
+<p>Add this code in <code>config/application</code></p>
+<pre><code class="language-ruby"><span class="hljs-class"><span class="hljs-keyword">module</span> <span class="hljs-title">MyBlogApp</span></span>
+  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Application</span> &lt; Rails::Application</span>
+
+    <span class="hljs-comment"># ...</span>
+
+    config.middleware.insert_before <span class="hljs-number">0</span>, <span class="hljs-string">"Rack::Cors"</span> <span class="hljs-keyword">do</span>
+      allow <span class="hljs-keyword">do</span>
+        origins <span class="hljs-string">'*'</span>
+        resource <span class="hljs-string">'*'</span>, <span class="hljs-symbol">:headers</span> =&gt; <span class="hljs-symbol">:any</span>, <span class="hljs-symbol">:methods</span> =&gt; [<span class="hljs-symbol">:get</span>, <span class="hljs-symbol">:post</span>, <span class="hljs-symbol">:options</span>]
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>Obviously, don’t actually use these settings in production, you will want to chose the allowed origins carefuly.</p>
+<p>Next, we’re gonna need some models for our Blog App. Lets create a Blog and an Author model</p>
+<p>Run:</p>
+<pre><code class="language-ruby">rails generate model Blog <span class="hljs-symbol">title:</span>string <span class="hljs-symbol">content:</span>string <span class="hljs-symbol">author_id:</span>integer
+</code></pre>
+<pre><code class="language-ruby">rails generate model Author <span class="hljs-symbol">name:</span>string
+</code></pre>
+<p>Our blog has one author so lets add that association to the model:</p>
+<pre><code class="language-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Blog</span> &lt; ActiveRecord::Base</span>
+  belongs_to <span class="hljs-symbol">:author</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>Alright it’s time to bring GraphQL in. We’re going to be using <a href="https://github.com/rmosolgo">rmosolgo’s</a> <a href="https://github.com/rmosolgo/GraphQL-ruby">GraphQL-ruby</a> which is an amazing gem to build our GraphQL Schema. Add the gem to your Gemfile.</p>
+<pre><code class="language-ruby">gem <span class="hljs-string">'GraphQL'</span>
+</code></pre>
+<p>Time to build our GraphQL Schema. Create a new folder in your app folder, <code>app/graph</code>. Everything GraphQL related will live there.</p>
+<p>In that folder, create <code>app/graph/types</code>, where our custom GraphQL types will be created.</p>
+<p>Make sure you add this line to your <code>application.rb</code> for rails to autoload the types:</p>
+<pre><code class="language-ruby">config.autoload_paths &lt;&lt; Rails.root.join(<span class="hljs-string">'app'</span>, <span class="hljs-string">'graph'</span>)
+config.autoload_paths &lt;&lt; Rails.root.join(<span class="hljs-string">'app'</span>, <span class="hljs-string">'graph'</span>, <span class="hljs-string">'types'</span>)
+</code></pre>
+<p>As a first type, let’s create the <code>Query</code> type. GraphQL always needs a query root for a schema. Create <code>query_type.rb</code> in <code>app/graph/types</code> and add the following code in it.</p>
+<pre><code class="language-ruby"><span class="hljs-comment"># app/graph/types/query_type.rb</span>
+QueryType = GraphQL::ObjectType.define <span class="hljs-keyword">do</span>
+  name <span class="hljs-string">"Query"</span>
+  description <span class="hljs-string">"The query root for this schema"</span>
+
+  field <span class="hljs-symbol">:blog</span> <span class="hljs-keyword">do</span>
+    type BlogType
+    argument <span class="hljs-symbol">:id</span>, !types.ID
+    resolve -&gt; (obj, args, ctx) {
+      Blog.find(args[<span class="hljs-symbol">:id</span>])
+    }
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>When declaring a type using the <code>GraphQL</code> gem, we have a few things to do. First we name the type (Query in that case). A small description is also needed for schema introspection. We declare fields on that type using the field method. Here we are using a block to define that field. We set the type for the <code>blog</code> field to BlogType and also give a resolve proc, which will be called when GraphQL wants to resolve that field. The proc takes 3 arguments, the obj (The query in that case), args which you will be able to pass in when you query, and context, a dict where you can pass any variables you might want to use on resolve time.</p>
+<p>So, at the query root, we declare a field blog. which will return a blog by id. Let’s add also the <code>BlogType</code> and the <code>AuthorType</code></p>
+<pre><code class="language-ruby"><span class="hljs-comment"># app/graph/types/blog_type.rb</span>
+BlogType = GraphQL::ObjectType.define <span class="hljs-keyword">do</span>
+  name <span class="hljs-string">"Blog"</span>
+  description <span class="hljs-string">"A Blog"</span>
+  field <span class="hljs-symbol">:title</span>, types.String
+  field <span class="hljs-symbol">:content</span>, types.String
+  field <span class="hljs-symbol">:author</span> <span class="hljs-keyword">do</span>
+    type AuthorType
+    resolve -&gt; (obj, args, ctx) {
+      obj.author
+    }
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<pre><code class="language-ruby"><span class="hljs-comment"># app/graph/types/author_type.rb</span>
+AuthorType = GraphQL::ObjectType.define <span class="hljs-keyword">do</span>
+  name <span class="hljs-string">"Author"</span>
+  description <span class="hljs-string">"Author of Blogs"</span>
+  field <span class="hljs-symbol">:name</span>, types.String
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>Let’s create the GraphQL Schema with our newly created types, at the root level of your graph folder, create this file:</p>
+<pre><code class="language-ruby"><span class="hljs-comment"># app/graph/blog_schema.rb</span>
+BlogSchema = GraphQL::Schema.new(<span class="hljs-symbol">query:</span> QueryType)
+</code></pre>
+<p>The only thing left now is exposing that Schema through an end point. The best way to do that is to handle POST requests with a GraphQL query as the data. Lets create <code>QueriesController</code> which will handle these POST requests.</p>
+<pre><code class="language-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">QueriesController</span> &lt; ApplicationController</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">create</span></span>
+    query_string = params[<span class="hljs-symbol">:query</span>]
+    query_variables = params[<span class="hljs-symbol">:variables</span>] <span class="hljs-params">||</span> {}
+    result = BlogSchema.execute(query_string, <span class="hljs-symbol">variables:</span> query_variables)
+    render <span class="hljs-symbol">json:</span> result
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>And let’s not forget to add a route to that controller:</p>
+<pre><code class="language-ruby">resources <span class="hljs-symbol">:queries</span>, <span class="hljs-symbol">via:</span> [<span class="hljs-symbol">:post</span>, <span class="hljs-symbol">:options</span>]
+</code></pre>
+<p>Time to test now! Add some mock data to your db and run queries using curl for now:</p>
+<p>Query:</p>
+<pre><code class="language-bash">curl -XPOST <span class="hljs-_">-d</span> <span class="hljs-string">'query={ blog(id: 1) { title content }}'</span> http://localhost:3000/queries
+</code></pre>
+<p>Response:</p>
+<pre><code class="language-bash">{<span class="hljs-string">"data"</span>:{<span class="hljs-string">"blog"</span>:{<span class="hljs-string">"title"</span>:<span class="hljs-string">"Intro to GraphQL"</span>,<span class="hljs-string">"content"</span>:<span class="hljs-string">"Something something something. Blah blah blah. Etc etc etc."</span>}}}
+</code></pre>
+<p>What if we wanted the author in the response ? Simply add it to the the query!</p>
+<p>Query:</p>
+<pre><code class="language-bash">curl -XPOST <span class="hljs-_">-d</span> <span class="hljs-string">'query={ blog(id: 1) { title content author { name } }}'</span> http://localhost:3000/queries
+</code></pre>
+<p>Response:</p>
+<pre><code class="language-bash">{<span class="hljs-string">"data"</span>:{<span class="hljs-string">"blog"</span>:{<span class="hljs-string">"title"</span>:<span class="hljs-string">"Intro to GraphQL"</span>,<span class="hljs-string">"content"</span>:<span class="hljs-string">"Something something something. Blah blah blah. Etc etc etc."</span>,<span class="hljs-string">"author"</span>:{<span class="hljs-string">"name"</span>:<span class="hljs-string">"Marc-Andre Giroux"</span>}}}}%
+</code></pre>
+<p>And that’s it! We got a working GraphQL API using Ruby on Rails. <strong>Stay tuned for the next part</strong> where we will build an app using React/Relay using the API we just built.</p>
+<p>You can take a look at the <a href="https://github.com/xuorig/my-simple-blogging-app">source here</a>.</p>
+<h4>If you have more questions about GraphQL, come hang out in Slack! <a href="https://GraphQL-slack.herokuapp.com/">https://GraphQL-slack.herokuapp.com/</a></h4>
+<h4>Edit:</h4>
+<p>As Sergio del Rio pointed out in comments, you’ll want to change <code>protect_from_forgery</code> to <code>null_session</code>
+in your <code>ApplicationController</code> for your api to work correctly at first. Also make sure you name your files the same as your class name for Rails to load them correctly. <code>QueryType</code> -&gt; <code>query_type.rb</code></p>
+<h4>Edit2:</h4>
+<p>Instead of using curl to test your queries, you can use GraphiQL, an amazing tool to test and even autocomplete your GraphQL queries. <a href="http://mgiroux.me/2016/setting-up-graphiql-with-rails/">Here’s how to install it in your Rails App.</a></p>
+<p>You can find me on Twitter <a href="https://twitter.com/__xuorig__">@__xuorig__</a> or <a href="http://github.com/xuorig">Github</a></p>
+</div><p style="text-align:center;font-weight:bold;margin-top:30px;" data-reactid="7"><!-- react-text: 8 -->Go back to <!-- /react-text --><a href="//" data-reactid="9">Recent Posts</a><!-- react-text: 10 --> ✍️<!-- /react-text --></p><hr data-reactid="11"/><div style="margin-bottom:30px;" data-reactid="12"><h6 data-reactid="13">READ THIS NEXT:</h6><h3 data-reactid="14"><a href="//2016/implementing-the-relay-spec-for-a-graphql-server/" data-reactid="15">Implementing the Relay spec in a GraphQL server</a></h3><p data-reactid="16">
+
+
+
+
+
+I’ve seen some confusion on Relay and GraphQL lately. GraphQL is so often used with Relay that I think sometimes we forget what a GraphQL server is, and what Relay adds on top of it. The goal of...</p></div><section class="disqus" data-reactid="17"><div id="disqus_thread" data-reactid="18"></div><script type="text/javascript" data-reactid="19"></script></section></div><span style="display:block;clear:both;" data-reactid="20"> </span></div></div><script src="//bundle.js?t=1478106780680"></script></body></html>

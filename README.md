@@ -1,1 +1,0 @@
-Jekyll personal page/blog

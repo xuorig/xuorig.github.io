@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url> <loc>http://mgiroux.me/2013/reatime-with-rails/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://mgiroux.me/2015/getting-started-with-rails-graphql-relay/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://mgiroux.me/2015/uploading-files-using-relay-with-rails/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://mgiroux.me/2016/graphql-on-rails-talk-montrealrb/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://mgiroux.me/2016/graphql-query-caching-with-rails/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://mgiroux.me/2016/implementing-the-relay-spec-for-a-graphql-server/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://mgiroux.me/2016/instrumenting-rails-apps/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://mgiroux.me/2016/journey-into-graphql-ruby-query-execution/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://mgiroux.me/2016/quick-dive-into-relay-query-fetching/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://mgiroux.me/2016/realtime-updates-with-relay/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://mgiroux.me/2016/relays-apply-update-function/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://mgiroux.me/2016/setting-up-graphiql-with-rails/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://mgiroux.me/2016/the-mysterious-relay-range-behaviours/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://mgiroux.me/2016/token-auth-in-relay-app-using-rails/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://mgiroux.me/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://mgiroux.me/404.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://mgiroux.me/speaking/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+</urlset>

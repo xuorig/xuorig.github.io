@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://mgiroux.me/sitemap.xml
+Disallow:

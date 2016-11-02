@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+ <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title data-react-helmet="true">Implementing the Relay spec in a GraphQL server</title><meta data-react-helmet="true" name="description" content="The difference between a vanila GraphQL server and a Relay compatible one, and how to implement the spec."/><link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" rel="stylesheet"/><link rel="author" href="https://plus.google.com/103412889445491341044"/><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB10DGDrJaB7IauMg99tM97DUH9QC4rcO8"></script><style>.me{border-bottom:1px solid #eee;text-align:center;margin-bottom:40px}.me__profile{padding:10px}.me__profile__name{font-weight:700;color:#222;margin-top:10px;margin-bottom:0}.me__profile__desc{font-size:20px;font-weight:200;color:#aaa;margin-top:20px}.me__photo{animation:bounce 1s normal;margin-right:20px}.me__photo img{margin:0}.me__photo img:hover{animation:bounce 1s infinite}.me__photo__avatar{display:inline-block;width:110px;height:110px;border-radius:50%}.me__separator{width:60%;border-top:1px solid #eee}.me p a{font-weight:500}.me p{color:#aaa;font-weight:200;margin:0;padding:5px}.me p:last-child{margin-bottom:15px}@keyframes bounce{0%,20%,53%,80%,to{animation-timing-function:cubic-bezier(.215,.61,.355,1);transform:translateZ(0)}40%,43%{animation-timing-function:cubic-bezier(.755,.05,.855,.06);transform:translate3d(0,-30px,0)}70%{animation-timing-function:cubic-bezier(.755,.05,.855,.06);transform:translate3d(0,-15px,0)}90%{transform:translate3d(0,-4px,0)}}.markdown img{width:100%}.markdown p,li,ul{color:#666;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-size:18px;line-height:1.4em;margin-top:20px;margin-bottom:20px}.markdown pre{display:block;background:#3f3f3f;color:#dcdcdc;overflow-y:hidden;margin-top:30px;margin-bottom:30px}.markdown pre code{background:none;border:none;border-radius:3px;display:inline-block;overflow:inherit;padding:1.58333rem;white-space:inherit;word-wrap:normal}code{border-radius:3px;white-space:pre;white-space:pre-wrap;white-space:pre-line;white-space:-pre-wrap;white-space:-o-pre-wrap;white-space:-moz-pre-wrap;white-space:-hp-pre-wrap;word-wrap:break-word;background:#e5e5e5;border:1px solid #ccc;display:inline;font-family:Inconsolata,monospace,serif;max-width:100%;overflow:auto;padding:0 .1625rem}.clojure .hljs-attribute,.css .hljs-class,.css .hljs-id,.hljs-keyword,.hljs-request,.hljs-status,.hljs-tag,.lisp .hljs-title,.nginx .hljs-title{color:#e3ceab}.django .hljs-filter .hljs-argument,.django .hljs-template_tag,.django .hljs-variable{color:#dcdcdc}.hljs-date,.hljs-number{color:#8cd0d3}.apache .hljs-sqbracket,.dos .hljs-envvar,.dos .hljs-stream,.hljs-variable{color:#efdcbc}.diff .hljs-change,.dos .hljs-flow,.hljs-literal,.python .exception,.python .hljs-built_in,.tex .hljs-special{color:#efefaf}.diff .hljs-chunk,.hljs-subst{color:#8f8f8f}.apache .hljs-tag,.diff .hljs-header,.dos .hljs-keyword,.haskell .hljs-type,.hljs-prompt,.hljs-title,.nginx .hljs-built_in,.python .hljs-decorator,.ruby .hljs-class .hljs-parent,.tex .hljs-command{color:#efef8f}.dos .hljs-winutils,.ruby .hljs-string,.ruby .hljs-symbol,.ruby .hljs-symbol .hljs-string{color:#dca3a3}.apache .hljs-cbracket,.coffeescript .hljs-attribute,.css .hljs-rules .hljs-value,.diff .hljs-deletion,.hljs-attr_selector,.hljs-built_in,.hljs-javadoc,.hljs-pragma,.hljs-preprocessor,.hljs-pseudo,.hljs-string,.hljs-tag .hljs-value,.smalltalk .hljs-array,.smalltalk .hljs-class,.smalltalk .hljs-localvars,.sql .hljs-aggregate,.tex .hljs-formula{color:#cc9393}.diff .hljs-addition,.hljs-comment,.hljs-doctype,.hljs-pi,.hljs-shebang,.hljs-template_comment,.java .hljs-annotation{color:#7f9f7f}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .css,.xml .hljs-cdata,.xml .javascript,.xml .vbscript{opacity:.5}.post__title{text-align:center;font-weight:200;color:#222;margin-top:0}p.post__date{font-size:14px;text-transform:uppercase;color:#aaa;text-align:center;margin:0 auto;margin-bottom:40px}body{margin:0;border-top:8px solid #d64292;font-family:Raleway,sans-serif}.wrapper{padding:60px 40px 0;max-width:700px;margin:0 auto}.love{font-weight:200}.load-more,.love{padding-bottom:80px;padding-top:60px;color:#aaa;text-align:center;margin:0 auto}.load-more{font-size:16px;font-weight:500}.load-more button{font-size:16px;font-weight:700;color:#d64292;background:none;border:none;margin:0;padding:0;cursor:pointer}.load-more button:hover{text-decoration:underline}.purple,a{color:#d64292;text-decoration:none}hr{margin-top:40px;margin-bottom:40px;width:80%;border:1px solid #eee}.post-list{padding:10px}.post-list__item{text-decoration:none;display:block;padding-left:20px;border-left:4px solid #aaa;min-height:100px;margin-bottom:80px;transition:all .4s ease-out}.post-list__item-enter{opacity:.01}.post-list__item-enter-active{opacity:1}.post-list__item:last-child{margin-bottom:0}.post-list__item:hover{border-left:4px solid #d64292}.post-list__item__header{margin-top:26px;display:-ms-flexbox;display:flex}.post-list__item__header__title{-ms-flex:4;flex:4;font-size:20px;color:#222;margin-top:0;margin-bottom:8px}.post-list__item__header__date{-ms-flex:1;flex:1;color:#aaa;text-align:right}.post-list__item__desc{color:#aaa;font-size:18px;margin-top:0}.talk-list{max-width:600px;margin:0 auto}.talk-list__talk{border-radius:2px;margin-top:40px;display:-ms-flexbox;display:flex;box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);transition:all .3s cubic-bezier(.25,.8,.25,1)}.talk-list__talk:hover{box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22)}.talk-list__talk__map{-ms-flex:1;flex:1}.talk-list__talk__content{padding:20px;-ms-flex:3;flex:3}.talk-list__talk__content p{margin-top:0;margin-bottom:15px}.talk-list__talk__content__name{font-weight:200;font-size:24px}.talk-list__talk__content__name--cancelled{text-decoration:line-through}.cancelled{font-weight:200;font-size:24px;color:red;text-decoration:none}.talk-list__talk__content__event{font-weight:200;color:#222;font-size:18px}.light{color:#aaa}</style></head><body class="landing-page"><div id="react-mount"><div style="max-width:960px;margin-left:auto;margin-right:auto;" data-reactroot="" data-reactid="1" data-react-checksum="-1916870797"><div class="wrapper markdown" data-reactid="2"><!-- react-empty: 3 --><h1 class="post__title" data-reactid="4">Implementing the Relay spec in a GraphQL server</h1><p class="post__date" data-reactid="5">March 27, 2016</p><div data-reactid="6"><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@__xuorig__">
+<meta name="twitter:creator" content="@__xuorig__">
+<meta name="twitter:title" content="Implementing the Relay spec in a GraphQL server">
+<meta name="twitter:description" content="The difference between a vanila GraphQL server and a Relay compatible one, and how to implement the spec.
+">
+<meta name="twitter:image" content="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNjAwIiB2aWV3Qm94PSIwIDAgNjAwIDYwMCI+PGcgZmlsbD0iI0YyNkIwMCI+PHBhdGggZD0iTTE0Mi41MzYgMTk4Ljg1OGMwIDI2LjM2LTIxLjM2OCA0Ny43Mi00Ny43MiA0Ny43Mi0yNi4zNiAwLTQ3LjcyMi0yMS4zNi00Ny43MjItNDcuNzJzMjEuMzYtNDcuNzIgNDcuNzItNDcuNzJjMjYuMzU1IDAgNDcuNzIyIDIxLjM2IDQ3LjcyMiA0Ny43MiIvPjxwYXRoIGQ9Ik01MDUuMTggNDE0LjIyNUgyMzguMTI0Yy0zNS4yNSAwLTYzLjkyNi0yOC42NzQtNjMuOTI2LTYzLjkyM3MyOC42NzgtNjMuOTI2IDYzLjkyNi02My45MjZoMTIwLjc4YzIwLjgxNiAwIDM3Ljc1My0xNi45MzggMzcuNzUzLTM3Ljc1NnMtMTYuOTM4LTM3Ljc1Ni0zNy43NTMtMzcuNzU2SDk0LjgxYy03LjIyNyAwLTEzLjA4Ni01Ljg2LTEzLjA4Ni0xMy4wODUgMC03LjIyNyA1Ljg2LTEzLjA4NiAxMy4wODUtMTMuMDg2aDI2NC4wOTNjMzUuMjUgMCA2My45MjMgMjguNjc4IDYzLjkyMyA2My45MjZzLTI4LjY3NCA2My45MjMtNjMuOTIzIDYzLjkyM2gtMTIwLjc4Yy0yMC44MiAwLTM3Ljc1NiAxNi45MzgtMzcuNzU2IDM3Ljc2IDAgMjAuODE2IDE2LjkzOCAzNy43NTMgMzcuNzU2IDM3Ljc1M0g1MDUuMThjNy4yMjcgMCAxMy4wODYgNS44NiAxMy4wODYgMTMuMDg1IDAgNy4yMjYtNS44NTggMTMuMDg1LTEzLjA4NSAxMy4wODV6Ii8+PHBhdGggZD0iTTQ1Ny40NjQgNDAxLjE0MmMwLTI2LjM2IDIxLjM2LTQ3LjcyIDQ3LjcyLTQ3LjcyczQ3LjcyIDIxLjM2IDQ3LjcyIDQ3LjcyLTIxLjM2IDQ3LjcyLTQ3LjcyIDQ3LjcyLTQ3LjcyLTIxLjM2LTQ3LjcyLTQ3LjcyIi8+PC9nPjwvc3ZnPg==">
+<p>I’ve seen some confusion on Relay and GraphQL lately. GraphQL is so often used with Relay that I think sometimes we forget what a GraphQL server is, and what Relay adds on top of it. The goal of the next 3 posts is to try to clearly see the line between the two, and how to implement the Relay part in an existing GraphQL Server.</p>
+<h3>Relay</h3>
+<p>From Facebook’s words Relay is simply a</p>
+<blockquote>
+<p>Framework for building data-driven React applications.</p>
+</blockquote>
+<p>It is a wrapper around Relay components, enabling them to live next to the GraphQL queries they need to fulfil their data requirements.
+On the client side, Relay’s strength is it’s amazing client side cache. On the server side, Relay expects the GraphQL server to implement a certain spec for things to work perfectly.</p>
+<h3>GraphQL &amp; Relay</h3>
+<p>Let’s take a look at what a Relay app needs from a GraphQL server that is different from usual. First, the <em>Global Object Identification</em>. Relay introduces the need for objects with unique identifiers, called “nodes”. With that concept, Relay can refetch arbitrary objects from a GraphQL server using their GID. On the GraphQL server, each object must have an <code>id</code> field returning that <code>GID</code>, and the root query type must have a <code>node</code> field, used to query nodes globally.</p>
+<p>Next, <em>Connections</em>. Connections are an Object that provide a standard way to slice and paginate results. Connections can provide <code>PageInfo</code>, a way of telling the client if there are more results to fetch still. The Connection object provides a cursor for every item in it’s result set.</p>
+<p>The last thing that Relay adds to a GraphQL server is the <em>Input Object Mutation</em>. Compared to regular GraphQL mutations, Relay mutations are similar, but try to standardize the way they are exposed and called. Every mutation takes 1 argument, an Input Object. This input object must always contain a <code>clientMutationId</code>, and the GraphQL server must always return it in the response.</p>
+<p>So as you see, 3 things are added on top of a vanila GraphQL server:</p>
+<ul>
+<li>Global Object Identification</li>
+<li>Connections</li>
+<li>Input Object Mutations</li>
+</ul>
+<h3>Implementing the spec</h3>
+<p>Each of these require quite a bit of work to implement in a GraphQL server. I’ve done the exercise myself, and will share what I’ve done to  implement the Relay spec in a Ruby on Rails GraphQL server, using the <code>GraphQL</code> gem as a base. I will divide the results in 3 blog posts, starting with this one. Let’s start by the <code>Global Object Indentification</code>.</p>
+<h3>Global Object Indentification</h3>
+<p>Let’s start by making our current Object Types compatible with Relay. If you remember from above, each object had to have an <code>id</code>field. GraphQL has support for interface objects, this is a great use case for what we want to do. When using interfaces in the <code>GraphQL</code> gem, the object implementing it “inherits” from it’s field.</p>
+<p>So the first step is to create that interface type, let’s call it <code>Node</code>.</p>
+<pre><code class="language-ruby"><span class="hljs-comment"># lib/graph/relay/node.rb</span>
+<span class="hljs-class"><span class="hljs-keyword">module</span> <span class="hljs-title">Graph</span></span>
+  <span class="hljs-class"><span class="hljs-keyword">module</span> <span class="hljs-title">Relay</span></span>
+    Node = GraphQL::InterfaceType.define <span class="hljs-keyword">do</span>
+      name <span class="hljs-string">"Node"</span>
+      field <span class="hljs-symbol">:id</span>, !types.ID, <span class="hljs-symbol">property:</span> <span class="hljs-symbol">:to_global_id</span>
+
+      resolve_type -&gt; (object) <span class="hljs-keyword">do</span>
+        Graph::Relay::Node.possible_types.detect <span class="hljs-keyword">do</span> <span class="hljs-params">|type|</span>
+          object.is_a?(type.model)
+        <span class="hljs-keyword">end</span>
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>This should not look too unfamiliar to you. We’re simply defining an Interface type using the <code>GraphQL</code> gem. An interface must be able to resolve the type of an object. The code is pretty straight forward, we look through all of the <code>possible_types</code> and find one that matches our object using <code>type.model</code>.</p>
+<p>Our field here, will simply resolve by calling <code>object.to_global_id</code>. We need Global Identification, so I used something that Rails has by default: <a href="https://github.com/rails/globalid">GlobalID</a>. Calling <code>object.to_global_id</code> transforms your ActiveRecord into a <code>GlobalID</code> oject, a unique identifier for that particular record.</p>
+<pre><code class="language-ruby">=&gt; User.find(<span class="hljs-number">1</span>).to_global_id
+=&gt; #&lt;GlobalID:0x007f9abca6ecb8 @uri=#&lt;URI::GID gid://app-name/User/1&gt;&gt;
+</code></pre>
+<p>You might’ve noticed that <code>type.model</code> is not an attribute that types have using the <code>GraphQL</code> gem. Since we’re using rails, I’ve augmented the normal GraphQL object type with my own attributes, like this:</p>
+<pre><code class="language-ruby"><span class="hljs-comment"># lib/graph/active_record_object_type.rb</span>
+<span class="hljs-class"><span class="hljs-keyword">module</span> <span class="hljs-title">Graph</span></span>
+  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ActiveRecordObjectType</span> &lt; GraphQL::ObjectType</span>
+    <span class="hljs-keyword">attr_accessor</span> <span class="hljs-symbol">:model</span>
+    accepts_definitions(<span class="hljs-symbol">:model</span>)
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p><code>accepts_definitions</code> is a new addition to the <code>GraphQL</code> gem. It basically lets you add custom fields to an ObjectType, while still being able to use the DSL <code>GraphQL-ruby</code> provides.</p>
+<p>With that being done, we can simply implement this interface in our existing fields, just like this:</p>
+<pre><code class="language-ruby"><span class="hljs-comment"># app/graph/user_type.rb</span>
+UserType = Graph::ActiveRecordObjectType.define <span class="hljs-keyword">do</span>
+  name <span class="hljs-string">"User"</span>
+  description <span class="hljs-string">"A User"</span>
+  interfaces [Graph::Relay::Node]
+  model User
+
+  field <span class="hljs-symbol">:email</span>, !types.String, <span class="hljs-symbol">property:</span> <span class="hljs-symbol">:email</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>The two lines that interest us here are <code>model User</code> which will indicate which ActiveRecord model our type is refering to, and <code>interfaces [Graph::Relay::Node]</code>, which does exactly what we wanted to do!</p>
+<p>There’s now only one thing left to do. Exposing a <code>node</code> field on the query root. We can do this just like defining any other field:</p>
+<pre><code class="language-ruby">  field <span class="hljs-symbol">:node</span> <span class="hljs-keyword">do</span>
+    type Graph::Relay::Node
+    argument <span class="hljs-symbol">:id</span>, !types.ID
+
+    resolve -&gt; (object, args, <span class="hljs-number">_</span>) <span class="hljs-keyword">do</span>
+      gid = GlobalID.parse(args[<span class="hljs-string">"id"</span>])
+      GlobalID::Locator.locate(gid)
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+</code></pre>
+<p>Our field accepts one argument, <code>id</code>. And uses <code>GlobalID::Locator</code> to get the corresponding object, pretty simple!</p>
+<p>Lets test this!</p>
+<p>First, let’s see if the object we query have the <code>id</code> field available:</p>
+<p><code>query getObjectId { viewer { currentUser { email } } }</code></p>
+<img width="637" alt="screenshot 2016-03-27 19 07 34" src="https://cloud.githubusercontent.com/assets/1919498/14068402/54fe279a-f450-11e5-8726-7520882996a6.png">
+<p>Then, we should be able to query any object using the <code>node</code> field:</p>
+<p><code>query getObjectById { node(id: &quot;gid://review-buddy/User/1&quot;) { ... on User { email } } }</code></p>
+<img width="602" alt="screenshot 2016-03-27 19 12 10" src="https://cloud.githubusercontent.com/assets/1919498/14068401/53951aee-f450-11e5-8c00-e9b0c531ec4a.png">
+<p>Next week I’ll have a post up about implementing the second thing Relay needs from a GraphQL server: <em>Connections</em></p>
+<p>As always you can find me on Twitter <a href="https://twitter.com/__xuorig__">@__xuorig__</a> or <a href="http://github.com/xuorig">Github</a></p>
+</div><p style="text-align:center;font-weight:bold;margin-top:30px;" data-reactid="7"><!-- react-text: 8 -->Go back to <!-- /react-text --><a href="//" data-reactid="9">Recent Posts</a><!-- react-text: 10 --> ✍️<!-- /react-text --></p><hr data-reactid="11"/><div style="margin-bottom:30px;" data-reactid="12"><h6 data-reactid="13">READ THIS NEXT:</h6><h3 data-reactid="14"><a href="//2016/relays-apply-update-function/" data-reactid="15">Relay&#x27;s new applyUpdate function</a></h3><p data-reactid="16">I recently contributed to Relay and helped implementing a new function on the Relay Store,
+applyUpdate. It was recently merged into master and the standard update method was deprecated in v0.6....</p></div><section class="disqus" data-reactid="17"><div id="disqus_thread" data-reactid="18"></div><script type="text/javascript" data-reactid="19"></script></section></div><span style="display:block;clear:both;" data-reactid="20"> </span></div></div><script src="//bundle.js?t=1478106780680"></script></body></html>
