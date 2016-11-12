@@ -8,6 +8,7 @@
 <url> <loc>http://mgiroux.me/2016/implementing-the-relay-spec-for-a-graphql-server/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://mgiroux.me/2016/instrumenting-rails-apps/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://mgiroux.me/2016/journey-into-graphql-ruby-query-execution/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://mgiroux.me/2016/navigating-large-codebases/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://mgiroux.me/2016/quick-dive-into-relay-query-fetching/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://mgiroux.me/2016/realtime-updates-with-relay/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://mgiroux.me/2016/relays-apply-update-function/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
