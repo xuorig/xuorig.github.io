@@ -6,6 +6,7 @@
 <url> <loc>http://mgiroux.me/2016/graphql-on-rails-talk-montrealrb/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://mgiroux.me/2016/graphql-query-caching-with-rails/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://mgiroux.me/2016/implementing-the-relay-spec-for-a-graphql-server/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://mgiroux.me/2016/inner-workings-relay-mutations/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://mgiroux.me/2016/instrumenting-rails-apps/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://mgiroux.me/2016/journey-into-graphql-ruby-query-execution/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://mgiroux.me/2016/navigating-large-codebases/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
