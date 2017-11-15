@@ -16,6 +16,7 @@
 <url> <loc>http://mgiroux.me/2016/setting-up-graphiql-with-rails/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://mgiroux.me/2016/the-mysterious-relay-range-behaviours/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://mgiroux.me/2016/token-auth-in-relay-app-using-rails/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://mgiroux.me/2017/panel-on-public-graphql-apis/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://mgiroux.me/2017/pretty-schema-masking/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://mgiroux.me/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://mgiroux.me/404.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
